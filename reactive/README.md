@@ -37,3 +37,7 @@
 - Caller 는 Callee 를 기다리지 않고 본인의 일을 한다.
 - 제어권을 Caller 가 가지고 있다.
 - Caller 와 다른 별도의 스레드가 필요하다.
+
+## Blocking 종류
+- CPU-bound blocking : 오랜 시간 일을 한다.
+- IO-bound blocking : 오랜 시간 대기를 한다.
