@@ -41,3 +41,29 @@
 ## Blocking 종류
 - CPU-bound blocking : 오랜 시간 일을 한다.
 - IO-bound blocking : 오랜 시간 대기를 한다.
+
+## CompletableFuture 클래스
+### Future
+- 비동기적인 작업을 수행
+- 해당 작업이 완료되면 결과를 반환
+
+### CompletionStage
+- 비동기적인 작업을 수행
+- 해당 작업이 완료되면 결과를 처리하거나 다른 CompletionStage 를 연결하는 인터페이스
+
+## Future 인터페이스
+### ExecutorService
+- 쓰레드 풀을 이용하여 비동기적으로 작업을 실행하고 관리
+- 쓰레드 풀을 이용하여 자원을 효율적으로 관리
+
+<br>
+
+- getFuture : 새로운 쓰레드를 생성하여 1을 반환
+- getFutureCompleteAfter1S : 새로운 쓰레드를 생성하고 1초 대기 후 1을 반환
+- get() : 결과를 구할때까지 쓰레드가 계속 block
+- get(long timeout, TimeUnit unit) : timout 동안 쓰레드가 block
+
+### Future 인터페이스의 한계
+- cancel 을 제외하고 외부에서 future 을 컨트롤 할 수 없다.
+- 반환된 결과를 get() 해서 접근하기 때문에 비동기 처리가 어렵다.
+- 완료되거나 에러가 발생했는지 구분이 어렵다.
