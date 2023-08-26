@@ -63,7 +63,7 @@
     - Stateless Processes
     - Port Binding
     - Concurrency
-    - Disposability
+    - Disposablity
     - Development & Production Party
     - Logs
     - Admin Processes For Eventual Processes
@@ -83,5 +83,11 @@
     - 비즈니스 로직 프로세스 변경되어 새로 개발 및 배포가 필요할 때, 필요한 부분만 개발하고 다른 서비스에 영향 최소화하고 독립적인 배포가 가능하다.
     - 작은 서비스들의 여러 서비스 묶음이다.
     - 자동화된 배포 서비스
+    - 서비스의 크기가 도메인의 특성을 고려해서, 독립적인 언어와 데이터베이스를 사용할 수 있다.
+    - 서비스별로 최적화된 언어, 데이터베이스 사용 권장
+    - 하나의 Backend 가 아니라 의미있는 구분, 서비스 구분
+- Front & Back
+  - Front, Back 분리
+  - Frontend Team / Backend, DevOps Team
 
 ## Spring Cloud
