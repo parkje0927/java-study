@@ -19,6 +19,9 @@ public class BridgeTest {
      * - 기능의 구현 클래스를 런타임때 지정할 수도 있다.
      * - 구현이 변경되더라도 기능 클래스 부분에 대한 컴파일은 필요 없다.
      * - 기능과 구현은 독립적으로 확장되며, 클라이언트는 기능의 인터페이스를 사용하므로(List) 구체적인 구현 내용은 숨길 수 있다.
+     *
+     * - Abstract Factory : 특정 브릿지를 생성하고 합성할 수 있다.
+     * - Adapter : 서로 관련 없는 클래스들이 연결될 수 있다.
      */
 
     public static void main(String[] args) {
