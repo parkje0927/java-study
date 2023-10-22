@@ -8,7 +8,6 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
 
-import java.sql.Connection;
 import java.sql.SQLException;
 
 /**
@@ -52,17 +51,6 @@ public class MemberServiceV3_1 {
     private static void validation(Member toMember) {
         if (toMember.getMemberId().equals("ex")) {
             throw new IllegalStateException("이체 중 예외가 발생했습니다.");
-        }
-    }
-
-    private static void release(Connection con) {
-        if (con != null) {
-            try {
-                con.setAutoCommit(true); //커넥션 풀을 고려
-                con.close();
-            } catch (Exception e) {
-                log.info("error", e);
-            }
         }
     }
 }
