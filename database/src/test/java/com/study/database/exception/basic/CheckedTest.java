@@ -14,7 +14,7 @@ public class CheckedTest {
         TestService service = new TestService();
         service.callCatch();
     }
-    
+
     @Test
     void checkedThrowTest() {
         TestService service = new TestService();
