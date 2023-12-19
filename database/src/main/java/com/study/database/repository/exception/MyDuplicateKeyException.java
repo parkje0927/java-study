@@ -1,6 +1,6 @@
 package com.study.database.repository.exception;
 
-public class MyDuplicateKeyException extends RuntimeException {
+public class MyDuplicateKeyException extends MyDBException {
 
     public MyDuplicateKeyException() {
     }
