@@ -91,3 +91,26 @@
   - Frontend Team / Backend, DevOps Team
 
 ## Spring Cloud
+
+## API Gateway Service
+- client 는 API Gateway 만 상대한다.
+- 인증 및 권한 부여
+- 서비스 검색 통합
+- 응답 캐싱
+- 정책, 회로 차당기 및 QoS 다시 시도
+- 속도 제한
+- 부하 분산
+- 로깅, 추적, 상관관계
+- 헤더, 쿼리 문자열 및 청구 변환
+- IP 허용 목록에 추가
+
+<br>
+
+- Spring Cloud 에서의 MSA 간 통신
+  - RestTemplate
+  - Feign Client
+
+### Netflix Zuul
+- zuul 을 이용해서 gateway 테스트 진행할 예정
+- API Gateway 와 동일한 역할, but Spring Boot 2.4 에서는 maintenance 상태이다. 즉 더 이상 사용 x
+- 
