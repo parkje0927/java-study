@@ -22,9 +22,13 @@ spring:
             - Path=/first-service/**
           filters:
             - RewritePath=/first-service/(?<segment>.*), /$\{segment}
+            - AddRequestHeader=first-request, first-request-header
+            - AddResponseHeader=first-response, first-response-header
         - id: my-second-service
           uri: http://localhost:8082/
           predicates:
             - Path=/second-service/**
           filters:
             - RewritePath=/second-service/(?<segment>.*), /$\{segment}
+            - AddRequestHeader=second-request, second-request-header
+            - AddResponseHeader=second-response, second-response-header
