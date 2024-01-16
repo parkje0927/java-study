@@ -23,7 +23,7 @@ spring:
             isPostLogger: true
       routes:
         - id: my-first-service
-          uri: http://localhost:8081/
+          uri: lb://MY-FIRST-SERVICE
           predicates:
             - Path=/first-service/**
           filters:
@@ -32,11 +32,16 @@ spring:
             - AddResponseHeader=first-response, first-response-header
             - CustomFilter
         - id: my-second-service
-          uri: http://localhost:8082/
+          uri: lb://MY-SECOND-SERVICE
           predicates:
             - Path=/second-service/**
           filters:
             - RewritePath=/second-service/(?<segment>.*), /$\{segment}
             - AddRequestHeader=second-request, second-request-header
             - AddResponseHeader=second-response, second-response-header
-            - CustomFilter
+            - name: CustomFilter
+            - name: LoggingFilter
+              args:
+                baseMessage: logging filter
+                isPreLogger: true
+                isPostLogger: true
