@@ -1,17 +1,24 @@
 package com.study.firstservice.controller;
 
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
 @RestController
-public class FirstServiceController {
+@RequestMapping("/test")
+public class TestController {
 
-    @GetMapping("/test")
-    public String test() {
-        return "test";
+    Environment environment;
+
+    @Autowired
+    public TestController(Environment environment) {
+        this.environment = environment;
     }
 
     @GetMapping("/welcome")
@@ -26,7 +33,8 @@ public class FirstServiceController {
     }
 
     @GetMapping("/check")
-    public String check() {
+    public String check(HttpServletRequest request) {
+        log.info("port = {}", request.getServerPort());
         return "this is a message from first-service";
     }
 }
