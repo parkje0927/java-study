@@ -22,7 +22,12 @@ spring:
             isPreLogger: true
             isPostLogger: true
       routes:
-
+        - id: user-service
+          uri: lb://USER-SERVICE
+          predicates:
+            - Path=/user-service/**
+          filters:
+            - RewritePath=/user-service/(?<segment>.*), /$\{segment}
 
         ## 테스트 실습
 #        - id: my-first-service
