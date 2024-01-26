@@ -5,7 +5,7 @@ server:
   port: 8082
 spring:
   application:
-    name: my-second-service
+    name: catalog-service # my-second-service
 eureka:
   instance:
     instance-id: ${spring.cloud.client.hostname}:${spring.application.instance_id:${random.value}}
