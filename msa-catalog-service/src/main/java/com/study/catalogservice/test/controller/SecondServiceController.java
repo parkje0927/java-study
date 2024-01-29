@@ -1,4 +1,4 @@
-package com.study.catalogservice.controller;
+package com.study.catalogservice.test.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
